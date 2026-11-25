@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img" aria-labelledby="t d">
+<title id="t">KTX 123 광명 승차, 대전 하차 여정의 단계 변화</title>
+<desc id="d">합성 여정. 16시 20분 예정 출발과 16시 21분 광명 도착에서는 boarding을 유지하고 타는 곳 5를 표시한다. 16시 22분 위치가 광명에서 천안아산으로 바뀌어 승차역 발차가 확인되면 running으로 바뀌고 현재 위치와 대전 17시 10분 도착 예정, 2분 지연을 표시한다. 17시 12분 대전 도착 중에는 추적을 유지하고 17시 14분 대전 발차가 확인되면 구독과 Live Activity가 끝난다. 발차 신호를 놓치면 같은 운행일 시각표에서 확정 위치가 광명 뒤인지 확인해 running으로 바꾸며, 접근 중인 역은 직전 정차역까지만 지난 것으로 본다. 역명 중복, 운행일 불일치, 시각표 조회 실패는 전환 근거가 아니다. 위치나 운행 중 이력이 있는 열차는 정상 빈 위치 응답이 3회 연속이면 종료하고, 통신 오류는 횟수에 넣지 않는다.</desc>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;fill:#17324d}
+.lane{font-size:17px;font-weight:700}
+.time{font-size:21px;font-weight:700;text-anchor:middle}
+.event{font-size:15px;text-anchor:middle;fill:#4b6378}
+.cell{font-size:15px;text-anchor:middle}
+.strong{font-weight:700}
+.muted{fill:#5d7184}
+.bar{font-size:15px;font-weight:700;fill:#fff;text-anchor:middle;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.note{font-size:15px}
+.noteTitle{font-size:16px;font-weight:700}
+</style>
+<rect width="1100" height="640" rx="18" fill="#f3f6f9"/>
+<text x="32" y="42" font-size="22" font-weight="700">KTX 123 · 광명 승차 → 대전 하차</text>
+<text x="1068" y="41" font-size="15" text-anchor="end" class="muted">합성 여정 · 한국시간</text>
+
+<!-- event header -->
+<g>
+  <text x="252" y="88" class="time">16:20</text><text x="252" y="112" class="event">예정 출발</text>
+  <text x="436" y="88" class="time">16:21</text><text x="436" y="112" class="event">승차역 도착</text>
+  <text x="620" y="88" class="time">16:22</text><text x="620" y="112" class="event">발차 확인</text>
+  <text x="804" y="88" class="time">17:12</text><text x="804" y="112" class="event">하차역 도착</text>
+  <text x="988" y="88" class="time">17:14</text><text x="988" y="112" class="event">하차역 발차</text>
+</g>
+<g stroke="#c4d2dd" stroke-dasharray="4 5"><path d="M252 126v262M436 126v262M620 126v262M804 126v262M988 126v262"/></g>
+
+<!-- lane: observed signals -->
+<rect x="20" y="134" width="1060" height="84" rx="10" fill="#fff"/>
+<text x="36" y="182" class="lane">관측 신호</text>
+<g class="cell">
+  <text x="252" y="168">전광판 3분 지연</text><text x="252" y="192">타는 곳 5</text>
+  <text x="436" y="168">위치 광명 접근</text><text x="436" y="192">→ 광명 도착</text>
+  <text x="620" y="168" class="strong">위치 광명 › 천안아산</text><text x="620" y="192">위치 지연 2분</text>
+  <text x="804" y="168">위치 대전 접근</text><text x="804" y="192">→ 대전 도착</text>
+  <text x="988" y="168" class="strong">위치 대전 › 김천구미</text>
+</g>
+
+<!-- lane: tracking status -->
+<text x="36" y="268" class="lane">추적 상태</text>
+<rect x="160" y="246" width="460" height="32" rx="16" fill="#2f61a4"/>
+<rect x="620" y="246" width="368" height="32" fill="#b4500f"/>
+<path d="M988 238v48" stroke="#17324d" stroke-width="4"/>
+<circle cx="620" cy="262" r="9" fill="#fff" stroke="#b4500f" stroke-width="4"/>
+<text x="390" y="267" class="bar">boarding</text>
+<text x="804" y="267" class="bar">running</text>
+<text x="1000" y="300" font-size="14" class="muted">추적 끝</text>
+
+<!-- lane: screen values -->
+<rect x="20" y="304" width="1060" height="84" rx="10" fill="#fff"/>
+<text x="36" y="352" class="lane">화면 값</text>
+<g class="cell">
+  <text x="252" y="338" class="strong">타는 곳 5</text><text x="252" y="362">16:20 출발 · 3분 지연</text>
+  <text x="436" y="338" class="strong">타는 곳 5</text><text x="436" y="362" class="muted">예정 시각이 지나도 유지</text>
+  <text x="620" y="338" class="strong">광명 › 천안아산</text><text x="620" y="362">17:10 도착예정 · 2분 지연</text>
+  <text x="804" y="338" class="strong">대전 도착</text><text x="804" y="362" class="muted">도착만으로는 끝내지 않음</text>
+  <text x="988" y="338" class="strong">카드 사라짐</text><text x="988" y="362" class="muted">구독·Activity 종료</text>
+</g>
+
+<!-- branch: missed departure signal -->
+<path d="M620 388v34" stroke="#b4500f" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+<rect x="286" y="422" width="500" height="196" rx="12" fill="#fff" stroke="#e3c3a8" stroke-width="2"/>
+<text x="306" y="452" class="noteTitle">발차 신호를 놓쳤다면</text>
+<text x="306" y="482" class="note">같은 운행일 시각표에서 확정 위치가 광명 뒤면 running</text>
+<text x="306" y="510" class="note">예: 위치가 <tspan class="strong">천안아산 접근</tspan>이면</text>
+<text x="306" y="534" class="note">직전 정차역 광명까지만 지난 것으로 본다</text>
+<text x="306" y="570" class="note muted">전환하지 않는 경우</text>
+<text x="306" y="596" class="note muted">역명 중복 · 운행일 다름 · 시각표 조회 실패</text>
+
+<!-- branch: end conditions -->
+<path d="M988 388v34" stroke="#17324d" stroke-width="3" stroke-dasharray="6 5" fill="none"/>
+<rect x="806" y="422" width="274" height="196" rx="12" fill="#fff" stroke="#c4d2dd" stroke-width="2"/>
+<text x="824" y="452" class="noteTitle">운행 중 추적을 끝내는 근거</text>
+<text x="824" y="482" class="note">대전 발차, 또는 같은</text>
+<text x="824" y="506" class="note">운행일 시각표상 대전 이후</text>
+<text x="824" y="542" class="note">정상 빈 위치 응답 3회 연속</text>
+<text x="824" y="570" class="note muted">위치·운행 중 이력이 있을 때만</text>
+<text x="824" y="596" class="note muted">통신 오류는 세지 않음</text>
+</svg>
